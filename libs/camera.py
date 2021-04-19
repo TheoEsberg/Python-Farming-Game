@@ -10,7 +10,7 @@ class Camera:
             self.xOffset = max(0, min(self.handler.currentMap.width * self.handler.currentMap.tilewidth - self.handler.displayWidth, entity.x + (entity.width/2) - (self.handler.displayWidth / 2)))
         else:
             #   If the map width is'nt bigger than the display width, this will center the camera on the X-axis
-            self.xOffset = (self.handler.currentMap.width * self.handler.currentMap.tilewidth) / 2 - (self.handler.displayHeight / 2)
+            self.xOffset = (self.handler.currentMap.width * self.handler.currentMap.tilewidth) / 2 - (self.handler.displayWidth / 2)
 
         #   If the map height is bigger than the display height, this will center the camera on the Y-axis
         if ((self.handler.currentMap.height * self.handler.currentMap.tileheight) > self.handler.displayHeight):

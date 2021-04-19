@@ -2,6 +2,10 @@ import pygame, os
 import libs.handler as Handler
 import libs.maps as Maps
 import libs.camera as Camera
+import libs.player
+import libs.entity
+import libs.mouseImg
+import libs.FPSCounter
 
 path = os.path.dirname(__file__)
 os.chdir(path)
@@ -15,6 +19,7 @@ pygame.display.set_caption("Python Farming Game")
 clock = pygame.time.Clock()
 
 handler = Handler.Handler()
+handler.pygame = pygame
 handler.display = display
 handler.displayWidth = displayWidth
 handler.displayHeight = displayHeight
@@ -22,6 +27,10 @@ handler.displayHeight = displayHeight
 renderMap = Maps.Map(handler)
 camera = Camera.Camera(handler)
 handler.camera = camera
+
+player = libs.player.Player(100, 200, 24, 24, 1, handler)
+mouseSetting = libs.mouseImg.Mouse(handler)
+FPS = libs.FPSCounter.FPS(handler, clock)
 
 
 def App():
@@ -33,7 +42,14 @@ def App():
 
         display.fill((0, 0, 0))
         renderMap.render()
-      
+
+        for entity in libs.entity.entities:
+            if (entity.allowTick == True):
+                entity.tick()
+
+        mouseSetting.tick()
+        FPS.tick()
+
         pygame.display.flip()
         clock.tick(60)
 

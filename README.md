@@ -17,9 +17,9 @@ The core mechanics will be :
 This checklist will be filled as the time goes.
 
 - [x] Implement a map from Tiled
-- [ ] Add a player
+- [x] Add a player
 - [x] Make camera follow player
-- [ ] Add collision from Tiled map
+- [x] Add collision from Tiled map
 - [ ] Add soil 
 - [ ] Add tilling the soil
 - [ ] Add seeding the soil

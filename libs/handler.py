@@ -11,8 +11,9 @@ class Handler:
         self.displayHeight = 800
         self.displayWidth = 1200
         self.camera = None
+        self.pygame = None
 
         #   Maps 
-        self.map = pytmx.load_pygame("res/maps/gamemap2X.tmx", pixelalpha=True)
+        self.map = pytmx.load_pygame("res/maps/gamemap4X-fixed.tmx", pixelalpha=True)
 
         self.currentMap = self.map
