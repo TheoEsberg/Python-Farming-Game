@@ -32,6 +32,7 @@ This checklist will be filled as the time goes.
 - [ ] Make weather depending on real weather from weather API
 - [ ] Make weather based on local position
 - [ ] Implement sleeping mechanics
+- [ ] Add inventory 
 
 Made by Theo Esberg
 

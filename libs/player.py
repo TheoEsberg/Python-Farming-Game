@@ -35,7 +35,7 @@ class Player(entity.Entity):
 
     def flipPlayer(self):
         self.mouseX, self.mouseY = self.handler.pygame.mouse.get_pos()
-        if (self.mouseX < (self.x - self.handler.camera.xOffset)):
+        if (self.mouseX < (self.x - self.handler.camera.xOffset + 48)):
             self.isFlipped = True
         else: self.isFlipped = False
 

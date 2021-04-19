@@ -41,7 +41,7 @@ def App():
                 running = False
 
         display.fill((0, 0, 0))
-        renderMap.render()
+        renderMap.renderingDoneRight()
 
         for entity in libs.entity.entities:
             if (entity.allowTick == True):
@@ -51,7 +51,7 @@ def App():
         FPS.tick()
 
         pygame.display.flip()
-        clock.tick(60)
+        clock.tick(6000)
 
 App()
 pygame.quit()
