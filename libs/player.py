@@ -13,8 +13,8 @@ class Player(entity.Entity):
         self.playerSprites = self.handler.pygame.image.load("res/gfx/player/Player-sprite-sheet.png")
         self.playerIdle = self.spriteSheet.getSprites(self.playerSprites, 24, 24, 1, 1, 4)
         self.playerRight = self.spriteSheet.getSprites(self.playerSprites, 24, 24, 2, 19, 4)
-        self.playerRunAnimation = anim.Animation(self.playerRight, 35, self.handler)
-        self.playerIdleAnimation = anim.Animation(self.playerIdle, 0, self.handler)
+        self.playerRunAnimation = anim.Animation(self.playerRight, 35)
+        self.playerIdleAnimation = anim.Animation(self.playerIdle, 0)
         self.inputs = inputs.Inputs(self.handler)
         self.movementSpeed = 4
         self.isFlipped = False

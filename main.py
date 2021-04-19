@@ -10,8 +10,8 @@ import libs.FPSCounter
 path = os.path.dirname(__file__)
 os.chdir(path)
 
-displayHeight = 800
-displayWidth = 1200
+displayHeight = 1080
+displayWidth = 1920
 
 pygame.init()
 display = pygame.display.set_mode((displayWidth, displayHeight))
@@ -28,7 +28,7 @@ renderMap = Maps.Map(handler)
 camera = Camera.Camera(handler)
 handler.camera = camera
 
-player = libs.player.Player(100, 200, 24, 24, 1, handler)
+player = libs.player.Player(500, 500, 24, 24, 1, handler)
 mouseSetting = libs.mouseImg.Mouse(handler)
 FPS = libs.FPSCounter.FPS(handler, clock)
 
@@ -51,7 +51,7 @@ def App():
         FPS.tick()
 
         pygame.display.flip()
-        clock.tick(6000)
+        clock.tick(60)
 
 App()
 pygame.quit()

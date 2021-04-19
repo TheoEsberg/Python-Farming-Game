@@ -14,6 +14,6 @@ class Handler:
         self.pygame = None
 
         #   Maps 
-        self.map = pytmx.load_pygame("res/maps/gamemap4X-fixed.tmx", pixelalpha=True)
+        self.map = pytmx.load_pygame("res/maps/supermap.tmx", pixelalpha=True)
 
         self.currentMap = self.map

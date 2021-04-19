@@ -33,6 +33,13 @@ This checklist will be filled as the time goes.
 - [ ] Make weather based on local position
 - [ ] Implement sleeping mechanics
 - [ ] Add inventory 
+- [ ] Add SFX such as music and foot steps
+- [ ] Implement a light system
 
 Made by Theo Esberg
+
+## v0.3 - The first massive update!
+In this update I have done a lot of stuff. I have created my player and scales him up from 24x24 to 96x96 to give that nice pixel art vibe. I have created a lot of new sprites as well as I made it posible to paint sprites easier with Tiles "Terrain" tool. I have added some good old collision. I did strugel a lot to add animated tiles from Tiled into pygame but after about eight and a half hours of drinking coffe, scouting the internet and rethinking life decisions I finaly got it! With some help from my friend [Edvin](https://www.instagram.com/Edvin_Andersssson) ofcourse!
+
+I am realy excited for this project and I realy want to get into adding some sound effects, background music and a lightning system to make the game feel more alive and have that perfekt pixel art vibe to it!
 
