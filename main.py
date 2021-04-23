@@ -6,17 +6,24 @@ import libs.player
 import libs.entity
 import libs.mouseImg
 import libs.FPSCounter
+import libs.shadowsAndLight
 
 path = os.path.dirname(__file__)
 os.chdir(path)
 
-displayHeight = 1080
-displayWidth = 1920
+displayHeight = 600
+displayWidth = 800
 
 pygame.init()
 display = pygame.display.set_mode((displayWidth, displayHeight))
 pygame.display.set_caption("Python Farming Game")
 clock = pygame.time.Clock()
+
+pygame.mixer.init()
+soundtrack = pygame.mixer.Sound("res/sfx/soundtrack-1.wav")
+pygame.mixer.Sound.set_volume(soundtrack, 0.1)
+pygame.mixer.Sound.play(soundtrack)
+
 
 handler = Handler.Handler()
 handler.pygame = pygame
@@ -29,9 +36,10 @@ camera = Camera.Camera(handler)
 handler.camera = camera
 
 player = libs.player.Player(500, 500, 24, 24, 1, handler)
+handler.player = player
 mouseSetting = libs.mouseImg.Mouse(handler)
 FPS = libs.FPSCounter.FPS(handler, clock)
-
+SaL = libs.shadowsAndLight.ShadowsAndLights(handler)
 
 def App():
     running = True
@@ -47,6 +55,13 @@ def App():
             if (entity.allowTick == True):
                 entity.tick()
 
+        # Testing light and shadows
+        # shadows = pygame.Surface((displayWidth, displayHeight), pygame.SRCALPHA)
+        # print(shadows.get_flags())
+        # shadows.fill((0, 0, 0, 64))
+        # display.blit(shadows, (0, 0))
+
+        SaL.tick()
         mouseSetting.tick()
         FPS.tick()
 
@@ -54,4 +69,5 @@ def App():
         clock.tick(60)
 
 App()
+pygame.mixer.quit()
 pygame.quit()

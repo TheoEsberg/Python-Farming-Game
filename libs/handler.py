@@ -12,6 +12,7 @@ class Handler:
         self.displayWidth = 1200
         self.camera = None
         self.pygame = None
+        self.player = None
 
         #   Maps 
         self.map = pytmx.load_pygame("res/maps/supermap.tmx", pixelalpha=True)

@@ -1,5 +1,5 @@
 from pytmx import load_pygame, TiledTileLayer
-import pytmx, libs.timer, libs.tileAnimation
+import pytmx, libs.tileAnimation
 
 class Map:
     def __init__(self, handler):
@@ -8,18 +8,11 @@ class Map:
         self.displayHeight = handler.displayHeight
         self.display = handler.display
 
-        self.timer = libs.timer.Timer(500)
-        self.timer.start()
-        self.timer2 = libs.timer.Timer(500)
-        self.animIndex = 0
-
         self.animations = {}
         for gid, props in self.handler.currentMap.tile_properties.items():
             imgs = []
             for animation_frame in props['frames']:
                 imgs.append(self.handler.currentMap.get_tile_image_by_gid(animation_frame.gid))
-            print(imgs)
-            imgs.pop(len(imgs) -1)
             anim = libs.tileAnimation.tileAnimation(imgs, props["frames"][0].duration, self.handler, gid)
             self.animations[gid] = anim
         

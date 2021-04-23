@@ -16,7 +16,6 @@ class Collision:
                                          tile_object.width, tile_object.height).colliderect(entityCol) == True):
                 
                 if (tile_object.name == "wall"):
-                    print("HIT A WALL")
                     return "wall"
         return False
     
